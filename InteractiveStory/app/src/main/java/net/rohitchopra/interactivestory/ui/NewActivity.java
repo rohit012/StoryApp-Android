@@ -1,17 +1,30 @@
-package net.rohitchopra.interactivestory;
+package net.rohitchopra.interactivestory.ui;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import net.rohitchopra.interactivestory.R;
+
 
 public class NewActivity extends ActionBarActivity {
+
+
+    public static final String TAG = NewActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new);
+
+        Intent intent= getIntent();
+        String name =  intent.getStringExtra(getString(R.string.key_name));
+
+        Log.d(TAG,name);
+
     }
 
 
